@@ -1,4 +1,4 @@
-package com.example.odd;
+package com.example.ood;
 
 /**
  * Simple Date Class - no error checking.

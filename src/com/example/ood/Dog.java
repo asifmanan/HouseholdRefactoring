@@ -1,4 +1,4 @@
-package com.example.odd;
+package com.example.ood;
 
 /**
  * Write a description of class Dog here.
