@@ -15,18 +15,23 @@ public class Family
     private String father;
     private Person[] children ;     // declare an array
     private int childCount;
+    private int maxChildren;    // $ declaring maxChildren variable for generality
     private ArrayList<Dog> myDogs;  // declare ArrayList
     // declare a collection of children - what type of object will be stored ???
 
 
 
-    public Family(String ma, String pa)
-    {
-        mother = ma;
-        father = pa;
+    public Family(String mother, String father) {
+        this(mother,father,5);
+    }
+
+    public Family(String mother, String father, int maxChildren){
+        this.mother = mother;
+        this.father = father;
         myDogs = new ArrayList<Dog>(); // create ArrayList
         // create the collection of children
-        children = new Person[5]; // create fixed size array
+        this.maxChildren = maxChildren;
+        children = new Person[this.maxChildren]; // create fixed size array
     }
 
     // using arrays
@@ -45,7 +50,7 @@ and avoid program crash)
     public boolean addChild(Person ch)
     {
         //  $ A validation check before adding a child, to restrict maxChild to 5
-        if(childCount<5){
+        if(childCount<maxChildren){
             children[childCount] = ch;
             childCount = childCount + 1;
             return true;
@@ -155,7 +160,7 @@ and avoid program crash)
             this.childCount--;
             /* $ Reducing the count here creates another problem, if an item is removed from the
                 middle and count is decremented then if a new item is added, it will overwrite the
-                last item in the array. 
+                last item in the array.
             */
         }
     }
