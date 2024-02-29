@@ -137,6 +137,15 @@ and avoid program crash)
         }
         return null;
     }
+    // $ Added function to find child by name and return its index in the array.
+    public int findChildIndexByName(String name){
+        for (int index = 0; index <= this.children.length; index++){
+            if(this.children[index].getName().equals(name)){
+                return index;
+            }
+        }
+        return -1;
+    }
     public void removeAChild(String name )
     {
         //????
