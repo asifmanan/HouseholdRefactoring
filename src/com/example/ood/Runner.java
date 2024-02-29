@@ -4,8 +4,8 @@ package com.example.ood;
 /**
  * Write a description of class Runner here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (asifmanan)
+ * @version (version 0)
  */
 public class Runner
 {
