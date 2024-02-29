@@ -1,6 +1,7 @@
 package com.example.ood;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Write a description of class Family here.
@@ -127,6 +128,15 @@ and avoid program crash)
     }
 
     // remove a child by name ? find it first and then ??
+    // $ Function to finding child by name and return the child(Person object) if found and null otherwise.
+    public Person findChildByName(String name){
+        for (Person child : this.children){
+            if (child.getName().equals(name)){
+                return child;
+            }
+        }
+        return null;
+    }
     public void removeAChild(String name )
     {
         //????
