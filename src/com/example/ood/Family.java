@@ -32,10 +32,22 @@ public class Family
 
     //Complete the code
     /* add Person object**/
+
+/*
+Task 4-1: -
+addChild() simply adds a child on to the end of the array using
+the childCount as an index. Amend its code so that it is not possible
+to add more children than the array can hold (hence improve robustness
+and avoid program crash)
+*/
+
     public void addChild(Person ch)
     {
-        children[childCount] = ch;
-        childCount = childCount + 1;
+        //  $ A validation check before adding a child, to restrict maxChild to 5
+        if(childCount<5){
+            children[childCount] = ch;
+            childCount = childCount + 1;
+        }
     }
 
     // output all elements
