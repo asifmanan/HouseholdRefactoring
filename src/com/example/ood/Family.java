@@ -40,14 +40,16 @@ the childCount as an index. Amend its code so that it is not possible
 to add more children than the array can hold (hence improve robustness
 and avoid program crash)
 */
-
-    public void addChild(Person ch)
+    //  $ Changed the return type of addChild to boolean in order to report the status of adding a child (True=success, False = Failure)
+    public boolean addChild(Person ch)
     {
         //  $ A validation check before adding a child, to restrict maxChild to 5
         if(childCount<5){
             children[childCount] = ch;
             childCount = childCount + 1;
+            return true;
         }
+        return false;
     }
 
     // output all elements
