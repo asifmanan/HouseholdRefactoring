@@ -146,9 +146,18 @@ and avoid program crash)
         }
         return -1;
     }
+    // $ Adding code to removeAChild function
     public void removeAChild(String name )
     {
-        //????
+        int removeIndex = findChildIndexByName(name);
+        if(removeIndex!=-1){
+            this.children[removeIndex] = null;
+            this.childCount--;
+            /* $ Reducing the count here creates another problem, if an item is removed from the
+                middle and count is decremented then if a new item is added, it will overwrite the
+                last item in the array. 
+            */
+        }
     }
 
 
