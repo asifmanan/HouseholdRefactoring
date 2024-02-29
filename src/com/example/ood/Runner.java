@@ -26,19 +26,19 @@ public class Runner
         childAddStatus = smiths.addChild(child1);
         // $ Printing notification messages for operation success or failure
         if(childAddStatus) System.out.println("Child added successfully");
-        else System.out.println("Child added successfully");
+        else System.out.println("Failed to add child");
 
         childAddStatus = smiths.addChild(child2);
         if(childAddStatus) System.out.println("Child added successfully");
-        else System.out.println("Child added successfully");
+        else System.out.println("Failed to add child");
         // child3 ??
         childAddStatus = smiths.addChild (new Person("0lek", 7)); //shortcut using an anonymous object
         if(childAddStatus) System.out.println("Child added successfully");
-        else System.out.println("Child added successfully");
+        else System.out.println("Failed to add child");
 
         childAddStatus = smiths.addChild("ivan",6);  // alternative way to add a child - see Family code
         if(childAddStatus) System.out.println("Child added successfully");
-        else System.out.println("Child added successfully");
+        else System.out.println("Failed to add child");
         // display calling the mutator
         System.out.println("***** Using showAllChildren()");
         smiths.showAllChildren();
