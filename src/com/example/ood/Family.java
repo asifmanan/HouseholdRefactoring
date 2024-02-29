@@ -49,7 +49,7 @@ and avoid program crash)
     //  $ Changed the return type of addChild to boolean in order to report the status of adding a child (True=success, False = Failure)
     public boolean addChild(Person ch)
     {
-        //  $ A validation check before adding a child, to restrict maxChild to 5
+        //  $ A validation check before adding a child, to restrict maxChild to maxChildren
         if(childCount<maxChildren){
             children[childCount] = ch;
             childCount = childCount + 1;
@@ -144,7 +144,7 @@ and avoid program crash)
     }
     // $ Added function to find child by name and return its index in the array.
     public int findChildIndexByName(String name){
-        for (int index = 0; index <= this.children.length; index++){
+        for (int index = 0; index < childCount; index++){
             if(this.children[index].getName().equals(name)){
                 return index;
             }
@@ -156,7 +156,11 @@ and avoid program crash)
     {
         int removeIndex = findChildIndexByName(name);
         if(removeIndex!=-1){
-            this.children[removeIndex] = null;
+//            this.children[removeIndex] = null;
+            for(int index=removeIndex; index<this.children.length-1 && this.children[index] != null; index++){
+                this.children[index] = this.children[index+1];
+            }
+            this.children[this.children.length-1] = null;
             this.childCount--;
             /* $ Reducing the count here creates another problem, if an item is removed from the
                 middle and count is decremented then if a new item is added, it will overwrite the
