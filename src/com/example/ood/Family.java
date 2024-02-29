@@ -117,12 +117,13 @@ and avoid program crash)
     /** Can you write addChild which is the equivalent of  public void addDog(String nnn, String bbb)
      * Check what data a Person  constructor requires and make sure you ask for these as parameters
      */
-    public void addChild(String nnn, int ag)
+    // $ Changing the return type to boolean to notify success or failure
+    public boolean addChild(String nnn, int ag)
     {
         Person temp;
         temp = new Person(nnn,ag); //create child object from parameter data
-        children[childCount] = temp; // add child object
-        childCount++;
+//      $ calling the addChild overloaded method and getting the return type
+        return addChild(temp);
     }
 
     // remove a child by name ? find it first and then ??
