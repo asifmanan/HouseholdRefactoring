@@ -32,22 +32,38 @@ public class Runner
         if(childAddStatus) System.out.println("Child added successfully");
         else System.out.println("Failed to add child");
         // child3 ??
-        childAddStatus = smiths.addChild (new Person("0lek", 7)); //shortcut using an anonymous object
+        childAddStatus = smiths.addChild (new Person("Olek", 7)); //shortcut using an anonymous object
         if(childAddStatus) System.out.println("Child added successfully");
         else System.out.println("Failed to add child");
 
         childAddStatus = smiths.addChild("ivan",6);  // alternative way to add a child - see Family code
         if(childAddStatus) System.out.println("Child added successfully");
         else System.out.println("Failed to add child");
+
+        childAddStatus = smiths.addChild("Rick",16);  // alternative way to add a child - see Family code
+        if(childAddStatus) System.out.println("Child added successfully");
+        else System.out.println("Failed to add child");
+
+        childAddStatus = smiths.addChild("Morty",18);  // alternative way to add a child - see Family code
+        if(childAddStatus) System.out.println("Child added successfully");
+        else System.out.println("Failed to add child");
+
         // display calling the mutator
         System.out.println("***** Using showAllChildren()");
         smiths.showAllChildren();
 
+//        Testing code for remove child
+        smiths.removeAChild("ivan");
+        System.out.println("***** Using showAllChildren()");
+        smiths.showAllChildren();
+//        ************
+
+
         // display calling the accessor
-        System.out.println("***** Using getAllChildren()");
-        String xx = smiths.getAllChildren();
+//        System.out.println("***** Using getAllChildren()");
+//        String xx = smiths.getAllChildren();
         // client has control of what to do with the data
-        System.out.println(xx);
+//        System.out.println(xx);
         //OR shortcut :  System.out.println(smiths.getAllChildren());
 
         // different ways of adding a dog
