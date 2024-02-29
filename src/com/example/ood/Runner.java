@@ -22,12 +22,23 @@ public class Runner
         Dog d1 = new Dog("Rex", "alsatian");
 
         // add the children to the array
-        smiths.addChild(child1);
-        smiths.addChild(child2);
-        // child3 ??
-        smiths.addChild (new Person("0lek", 7)); //shortcut using an anonymous object
-        smiths.addChild("ivan",6);  // alternative way to add a child - see Family code
+        boolean childAddStatus = false; // $ Added a status flag which catches the return value of addChild to notify if operation was success or fail
+        childAddStatus = smiths.addChild(child1);
+        // $ Printing notification messages for operation success or failure
+        if(childAddStatus) System.out.println("Child added successfully");
+        else System.out.println("Child added successfully");
 
+        childAddStatus = smiths.addChild(child2);
+        if(childAddStatus) System.out.println("Child added successfully");
+        else System.out.println("Child added successfully");
+        // child3 ??
+        childAddStatus = smiths.addChild (new Person("0lek", 7)); //shortcut using an anonymous object
+        if(childAddStatus) System.out.println("Child added successfully");
+        else System.out.println("Child added successfully");
+
+        childAddStatus = smiths.addChild("ivan",6);  // alternative way to add a child - see Family code
+        if(childAddStatus) System.out.println("Child added successfully");
+        else System.out.println("Child added successfully");
         // display calling the mutator
         System.out.println("***** Using showAllChildren()");
         smiths.showAllChildren();
